@@ -14,10 +14,10 @@
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
-                        print '<hr><p>';
+                        print '<p>';
                         print '<b>'.$mensagem['name'].':</b><br>';
                         print $mensagem['msg'];
-                        print '</p>';
+                        print '</p><hr>';
                     }
                 }else{
                     print '<p>Nenhuma mensagem encontrada</p>';
