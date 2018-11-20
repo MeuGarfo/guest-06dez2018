@@ -9,4 +9,7 @@
     <note priority="medium" time="1542738102">
         botão para apagar a mensagem
     </note>
+    <note priority="medium" time="1542758153">
+        fix bug do title na tela de erro
+    </note>
 </todo>
