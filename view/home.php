@@ -26,7 +26,7 @@
             </div>
             <div class="span4">
                 <h1>Escrever</h1>
-                <form class="form-vertcal" action="/mensagem" method="post">
+                <form class="form-vertcal" action="/mensagem" method="post" id="mensagem">
                     <div class="control-group">
                         <label for="name">Nome</label>
                         <div class="controls">
@@ -45,6 +45,14 @@
                         </div>
                     </div>
                 </form>
+                <script type="text/javascript">
+                $('#msg').keypress(function (e) {
+                    if (e.which == 13) {
+                        $('#mensagem').submit();
+                        return false;    //<---- Add this line
+                    }
+                });
+                </script>
             </div>
         </div>
     </div> <!--container-->
