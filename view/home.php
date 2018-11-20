@@ -2,15 +2,15 @@
 <html lang="pt" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title>Hello World</title>
+    <title><?php print $title; ?></title>
     <?php view('inc/header'); ?>
 </head>
 <body>
-    <?php view('inc/navOffline'); ?>
+    <?php view('inc/navOffline',$data); ?>
     <div class="container">
         <div class="row">
             <div class="span8">
-                <h1>Mensagens</h1>
+                <h1><?php print $subtitle; ?></h1>
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {

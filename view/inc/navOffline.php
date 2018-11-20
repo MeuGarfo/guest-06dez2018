@@ -6,10 +6,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="/">Hello World</a>
+      <a class="brand" href="/"><?php print $title; ?></a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="/">Home</a></li>
+          <li><a href="/"><?php print $subtitle; ?></a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
