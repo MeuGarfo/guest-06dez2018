@@ -49,7 +49,7 @@
                 $('#msg').keypress(function (e) {
                     if (e.which == 13) {
                         $('#mensagem').submit();
-                        return false;    //<---- Add this line
+                        return false;
                     }
                 });
                 </script>
