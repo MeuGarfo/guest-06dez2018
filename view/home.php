@@ -30,7 +30,7 @@
                     <div class="control-group">
                         <label for="name">Nome</label>
                         <div class="controls">
-                            <input class="span4" type="text" name="name" value="" id="name">
+                            <input class="span4" type="text" name="name" value="Anderson Ismael" id="name">
                         </div>
                     </div>
                     <div class="control-group">
