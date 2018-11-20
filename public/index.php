@@ -14,6 +14,9 @@ switch($controller){
     case '/':
     controller("home");
     break;
+    case 'mensagem':
+    controller("mensagem");
+    break;
     default:
     view('404');
     break;
