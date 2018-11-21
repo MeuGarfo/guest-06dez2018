@@ -14,9 +14,14 @@
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
+                        print '<b>'.$mensagem['name'].'</b>';
+                        $id=$mensagem['id'];
+                        view('menu/mensagem',['id'=>$id]);
+                        print '<p id="mensagem'.$id.'">'.$mensagem['msg'].'</p>';
+                        $data=date('r',$mensagem['created_at']);
+                        $link='<a href="/mensagem/'.$id.'">'.$data.'</a>';
                         print '<p>';
-                        print '<b>'.$mensagem['name'].':</b><br>';
-                        print $mensagem['msg'];
+                        print '<small>'.$link.'</small>';
                         print '</p><hr>';
                     }
                 }else{
@@ -26,25 +31,7 @@
             </div>
             <div class="span4">
                 <h1>Escrever</h1>
-                <form class="form-vertcal" action="/mensagem" method="post" id="mensagem">
-                    <div class="control-group">
-                        <label for="name">Nome</label>
-                        <div class="controls">
-                            <input class="span4" type="text" name="name" value="Anderson Ismael" id="name">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label for="msg">Mensagem</label>
-                        <div class="controls">
-                            <textarea class="span4" name="msg" rows="8" cols="80" id="msg"></textarea>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="controls">
-                            <button type="submit" name="button">Enviar mensagem</button>
-                        </div>
-                    </div>
-                </form>
+                <?php view('form/mensagem'); ?>
                 <script type="text/javascript">
                 $('#msg').keypress(function (e) {
                     if (e.which == 13) {

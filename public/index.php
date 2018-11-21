@@ -7,6 +7,9 @@ if(isDev()){
     error_reporting(E_ALL);
 }
 
+//config
+date_default_timezone_set('America/Sao_Paulo');
+
 //regras
 $segment=segment();
 $controller=$segment[1];
