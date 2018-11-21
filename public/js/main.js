@@ -4,7 +4,6 @@ $(".nav li a").each(function(index) {
     }
 });
 
-
 function abrirMensagem(id){
     var url='/mensagem/'+id;
     var $modal = $('#ajax-modal');
