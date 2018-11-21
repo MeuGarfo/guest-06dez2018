@@ -5,9 +5,7 @@ $where=[
 ];
 $mensagens=$db->select('mensagens','*',$where);
 $data=[
-    'mensagens'=>$mensagens,
-    'title'=>'Livro de visitas',
-    'subtitle'=>'Mensagens'
+    'mensagens'=>$mensagens
 ];
 view("home",$data);
 ?>
