@@ -18,10 +18,13 @@
     <note priority="medium" time="1542974500" done="1542974526">
         criar mensagem usando o modal
     </note>
+    <note priority="medium" time="1542977972" done="1542996626">
+        exibit a mensagem em uma janela individual (para target=_blank)
+    </note>
     <note priority="medium" time="1542987621" done="1542995824">
         ativar o focus() no #msg após ele aparecer
     </note>
-    <note priority="medium" time="1542977972" done="1542996626">
-        exibit a mensagem em uma janela individual (para target=_blank)
+    <note priority="medium" time="1542996871" done="1542998115">
+        consertar o bug do focus no textarea #msg do modal
     </note>
 </todo>

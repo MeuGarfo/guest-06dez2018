@@ -21,6 +21,7 @@ function abrirModal(url){
             $modal.show();
         });
     }, 1000);
+
     return false;
 }
 
@@ -32,9 +33,15 @@ function apagarMensagem(id){
 function criarMensagem(){
     var url='/mensagem/criar';
     abrirModal(url);
+    $modal.on('shown', function () {
+        $('#msg').focus();
+    });
 }
 
 function editarMensagem(id){
     var url='/mensagem/'+id+'/editar';
     abrirModal(url);
+    $modal.on('shown', function () {
+        $('#msg').focus();
+    });
 }

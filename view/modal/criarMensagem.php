@@ -13,7 +13,7 @@
         <div class="control-group">
             <label for="msg">Mensagem</label>
             <div class="controls">
-                <textarea class="input-block-level" name="msg" rows="8" cols="80" id="msg"></textarea>
+                <textarea tabindex="1" class="input-block-level" name="msg" rows="8" cols="80" id="msg"></textarea>
             </div>
         </div>
     </form>
@@ -24,12 +24,6 @@
             return false;
         }
     });
-    $(function(){
-        $modal.hover(function() {
-            $('#msg').focus();
-        });
-    });
-
     </script>
 </div>
 <div class="modal-footer">
