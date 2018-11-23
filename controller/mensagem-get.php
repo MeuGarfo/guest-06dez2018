@@ -1,5 +1,6 @@
 <?php
 $id=segment(2);
+$crud=segment(3);
 if(is_numeric($id) && isAjax()){
     $db=db();
     $where=[
@@ -9,7 +10,13 @@ if(is_numeric($id) && isAjax()){
     $data=[
         'mensagem'=>$mensagem
     ];
-    view('modal/mensagem',$data);
+    if($crud=='editar'){
+        view('modal/editarMensagem',$data);
+    }elseif($crud=='apagar'){
+        view('modal/apagarMensagem',$data);
+    }else{
+        view('modal/mensagem',$data);
+    }
 }elseif(is_numeric($id) && !isAjax()){
     $url='/';
     redirect($url);

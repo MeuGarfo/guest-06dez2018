@@ -1,6 +1,10 @@
 <?php
 $name=@$_POST['name'];
 $msg=@$_POST['msg'];
+$where=[
+    'id'=>segment(2)
+];
+$crud=segment(3);
 if(strlen($name)<1){
     $data=[
         'title'=>'Erro',
@@ -20,8 +24,13 @@ if(strlen($name)<1){
         'created_at'=>time()
     ];
     $db=db();
-    $db->insert("mensagens",$data);
-    $id=$db->id();
+    if($crud=='editar'){
+        $db->update("mensagens",$data,$where);
+    }elseif($crud=='apagar'){
+        $db->delete("mensagens",$where);
+    }else{
+        $db->insert("mensagens",$data);
+    }
     $url='/';
     redirect($url);
 }

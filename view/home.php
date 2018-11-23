@@ -11,7 +11,10 @@
         <div class="row">
             <div class="span12">
                 <div class="text-center">
-                    <a class="btn btn-large btn-success" href="javascript:criarMensagem();">Escrever mensagem</a><hr>
+                    <a class="btn btn-large btn-success" href="javascript:criarMensagem();">
+                        <i class="icon-white  icon-pencil"></i>
+                        Escrever mensagem
+                    </a><hr>
                 </div>
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
@@ -21,7 +24,7 @@
                         view('menu/mensagem',['id'=>$id]);
                         print '<p>'.$mensagem['msg'].'</p>';
                         $data=date('r',$mensagem['created_at']);
-                        $link='<a onclick="javascript:abrirMensagem('.$id.')" href="#mensagem'.$id.'">'.$data.'</a>';
+                        $link='<a onclick="javascript:abrirMensagem('.$id.')" href="javascript:void();">'.$data.'</a>';
                         print '<p>';
                         print '<small>'.$link.'</small>';
                         print '</p><hr>';

@@ -5,7 +5,6 @@
 <div class="modal-body">
         <?php
         $id=$mensagem['id'];
-        view('menu/mensagem',['id'=>$id]);
         print '<p id="mensagem'.$id.'">'.$mensagem['msg'].'</p>';
         $data=date('r',$mensagem['created_at']);
         $link='<a href="/mensagem/'.$id.'">'.$data.'</a>';
