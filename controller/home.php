@@ -1,7 +1,10 @@
 <?php
 $db=db();
 $where=[
-    'id[>]'=>0
+    'id[>]'=>0,
+    'ORDER'=>[
+        'created_at'=>'DESC'
+    ]
 ];
 $mensagens=$db->select('mensagens','*',$where);
 $data=[

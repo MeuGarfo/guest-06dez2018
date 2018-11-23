@@ -16,10 +16,10 @@
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
-                        print '<b>'.$mensagem['name'].'</b>';
                         $id=$mensagem['id'];
+                        print '<b>'.$mensagem['name'].'</b>';
                         view('menu/mensagem',['id'=>$id]);
-                        print '<p id="mensagem'.$id.'">'.$mensagem['msg'].'</p>';
+                        print '<p>'.$mensagem['msg'].'</p>';
                         $data=date('r',$mensagem['created_at']);
                         $link='<a onclick="javascript:abrirMensagem('.$id.')" href="#mensagem'.$id.'">'.$data.'</a>';
                         print '<p>';

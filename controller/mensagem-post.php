@@ -21,6 +21,7 @@ if(strlen($name)<1){
     ];
     $db=db();
     $db->insert("mensagens",$data);
+    $id=$db->id();
     $url='/';
     redirect($url);
 }

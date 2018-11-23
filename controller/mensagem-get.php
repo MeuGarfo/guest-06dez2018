@@ -11,7 +11,7 @@ if(is_numeric($id) && isAjax()){
     ];
     view('modal/mensagem',$data);
 }elseif(is_numeric($id) && !isAjax()){
-    $url='/#mensagem'.$id;
+    $url='/';
     redirect($url);
 }elseif (isAjax() && !is_numeric($id)) {
     switch ($id) {
