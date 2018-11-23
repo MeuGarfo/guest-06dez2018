@@ -24,6 +24,11 @@ function abrirModal(url){
     return false;
 }
 
+function apagarMensagem(id){
+    var url='/mensagem/'+id+'/apagar';
+    abrirModal(url);
+}
+
 function criarMensagem(){
     var url='/mensagem/criar';
     abrirModal(url);

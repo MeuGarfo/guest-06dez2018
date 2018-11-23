@@ -1,11 +1,16 @@
 <?php
+$db=db();
 $name=@$_POST['name'];
 $msg=@$_POST['msg'];
 $where=[
     'id'=>segment(2)
 ];
 $crud=segment(3);
-if(strlen($name)<1){
+if($crud=='apagar'){
+    $db->delete("mensagens",$where);
+    $url='/';
+    redirect($url);
+}elseif(strlen($name)<1){
     $data=[
         'title'=>'Erro',
         'msg'=>'Digite o seu nome'
@@ -18,7 +23,6 @@ if(strlen($name)<1){
     ];
     view('erro',$data);
 }else{
-    $db=db();
     if($crud=='editar'){
         $data=[
             'name'=>$name,
@@ -26,8 +30,6 @@ if(strlen($name)<1){
             'updated_at'=>time()
         ];
         $db->update("mensagens",$data,$where);
-    }elseif($crud=='apagar'){
-        $db->delete("mensagens",$where);
     }else{
         $data=[
             'name'=>$name,
