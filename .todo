@@ -9,13 +9,16 @@
     <note priority="medium" time="1542758153" done="1542801263">
         fix bug do title na tela de erro
     </note>
-    <note priority="medium" time="1542738102">
+    <note priority="medium" time="1542974500" done="1542974526">
+        criar mensagem usando o modal
+    </note>
+    <note priority="medium" time="1542738102" done="1542977978">
         editar mensagem em um modal
     </note>
     <note priority="medium" time="1542804118">
         apagar mensagem via ajax com um modal de confirmação
     </note>
-    <note priority="medium" time="1542974500" done="1542974526">
-        criar mensagem usando o modal
+    <note priority="medium" time="1542977972">
+        exibit a mensagem em uma janela individual (para target=_blank)
     </note>
 </todo>
