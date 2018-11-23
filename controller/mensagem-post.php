@@ -18,17 +18,22 @@ if(strlen($name)<1){
     ];
     view('erro',$data);
 }else{
-    $data=[
-        'name'=>$name,
-        'msg'=>$msg,
-        'created_at'=>time()
-    ];
     $db=db();
     if($crud=='editar'){
+        $data=[
+            'name'=>$name,
+            'msg'=>$msg,
+            'updated_at'=>time()
+        ];
         $db->update("mensagens",$data,$where);
     }elseif($crud=='apagar'){
         $db->delete("mensagens",$where);
     }else{
+        $data=[
+            'name'=>$name,
+            'msg'=>$msg,
+            'created_at'=>time()
+        ];
         $db->insert("mensagens",$data);
     }
     $url='/';
