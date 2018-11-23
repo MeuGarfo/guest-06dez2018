@@ -24,7 +24,7 @@
                         view('menu/mensagem',['id'=>$id]);
                         print '<p>'.$mensagem['msg'].'</p>';
                         $data=date('r',$mensagem['created_at']);
-                        $link='<a onclick="javascript:abrirMensagem('.$id.')" href="javascript:void(0);">'.$data.'</a>';
+                        $link='<a onclick="abrirMensagem('.$id.'); return false;" href="/mensagem/'.$id.'">'.$data.'</a>';
                         print '<p>';
                         print '<small>'.$link.'</small>';
                         print '</p><hr>';

@@ -6,19 +6,22 @@
     <note priority="medium" time="1542738093" done="1542804133">
         link para a mensagem
     </note>
+    <note priority="medium" time="1542738102" done="1542977978">
+        editar mensagem em um modal
+    </note>
     <note priority="medium" time="1542758153" done="1542801263">
         fix bug do title na tela de erro
+    </note>
+    <note priority="medium" time="1542804118" done="1542995892">
+        apagar mensagem via ajax com um modal de confirmação
     </note>
     <note priority="medium" time="1542974500" done="1542974526">
         criar mensagem usando o modal
     </note>
-    <note priority="medium" time="1542738102" done="1542977978">
-        editar mensagem em um modal
+    <note priority="medium" time="1542987621" done="1542995824">
+        ativar o focus() no #msg após ele aparecer
     </note>
-    <note priority="medium" time="1542804118">
-        apagar mensagem via ajax com um modal de confirmação
-    </note>
-    <note priority="medium" time="1542977972">
+    <note priority="medium" time="1542977972" done="1542996626">
         exibit a mensagem em uma janela individual (para target=_blank)
     </note>
 </todo>

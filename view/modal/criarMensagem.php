@@ -24,6 +24,11 @@
             return false;
         }
     });
+    $(function(){
+        $modal.hover(function() {
+            $('#msg').focus();
+        });
+    });
 
     </script>
 </div>

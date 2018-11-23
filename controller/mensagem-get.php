@@ -1,15 +1,15 @@
 <?php
 $id=segment(2);
 $crud=segment(3);
+$db=db();
+$where=[
+    'id'=>$id
+];
+$mensagem=$db->get("mensagens",'*',$where);
+$data=[
+    'mensagem'=>$mensagem
+];
 if(is_numeric($id) && isAjax()){
-    $db=db();
-    $where=[
-        'id'=>$id
-    ];
-    $mensagem=$db->get("mensagens",'*',$where);
-    $data=[
-        'mensagem'=>$mensagem
-    ];
     if($crud=='editar'){
         view('modal/editarMensagem',$data);
     }elseif($crud=='apagar'){
@@ -18,8 +18,7 @@ if(is_numeric($id) && isAjax()){
         view('modal/mensagem',$data);
     }
 }elseif(is_numeric($id) && !isAjax()){
-    $url='/';
-    redirect($url);
+    view('mensagem',$data);
 }elseif (isAjax() && !is_numeric($id)) {
     switch ($id) {
         case 'criar':
