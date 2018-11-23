@@ -10,9 +10,12 @@
         fix bug do title na tela de erro
     </note>
     <note priority="medium" time="1542738102">
-        criar/editar mensagem em um modal
+        editar mensagem em um modal
     </note>
     <note priority="medium" time="1542804118">
         apagar mensagem via ajax com um modal de confirmação
+    </note>
+    <note priority="medium" time="1542974500" done="1542974526">
+        criar mensagem usando o modal
     </note>
 </todo>

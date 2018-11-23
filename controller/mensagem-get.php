@@ -13,6 +13,15 @@ if(is_numeric($id) && isAjax()){
 }elseif(is_numeric($id) && !isAjax()){
     $url='/#mensagem'.$id;
     redirect($url);
+}elseif (isAjax() && !is_numeric($id)) {
+    switch ($id) {
+        case 'criar':
+        view('modal/criarMensagem');
+        break;
+        default:
+        view('404');
+        break;
+    }
 }else{
     view('404');
 }

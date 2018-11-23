@@ -6,6 +6,10 @@ $(".nav li a").each(function(index) {
 
 function abrirMensagem(id){
     var url='/mensagem/'+id;
+    abrirModal(url);
+}
+
+function abrirModal(url){
     var $modal = $('#ajax-modal');
     $('body').modalmanager('loading');
     setTimeout(function(){
@@ -14,4 +18,9 @@ function abrirMensagem(id){
         });
     }, 1000);
     return false;
+}
+
+function criarMensagem(){
+    var url='/mensagem/criar';
+    abrirModal(url);
 }

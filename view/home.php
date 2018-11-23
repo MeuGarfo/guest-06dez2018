@@ -9,8 +9,10 @@
     <?php view('inc/navOffline',$data); ?>
     <div class="container">
         <div class="row">
-            <div class="span8">
-                <h1>Mensagens</h1>
+            <div class="span12">
+                <div class="text-center">
+                    <a class="btn btn-large btn-success" href="javascript:criarMensagem();">Escrever mensagem</a><hr>
+                </div>
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
@@ -28,18 +30,6 @@
                     print '<p>Nenhuma mensagem encontrada</p>';
                 }
                 ?>
-            </div>
-            <div class="span4">
-                <h1>Escrever</h1>
-                <?php view('form/mensagem'); ?>
-                <script type="text/javascript">
-                $('#msg').keypress(function (e) {
-                    if (e.which == 13) {
-                        $('#mensagem').submit();
-                        return false;
-                    }
-                });
-                </script>
             </div>
         </div>
     </div> <!--container-->
