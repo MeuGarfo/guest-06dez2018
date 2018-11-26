@@ -27,4 +27,13 @@
     <note priority="medium" time="1542996871" done="1542998115">
         consertar o bug do focus no textarea #msg do modal
     </note>
+    <note priority="medium" time="1543049485" done="1543056040">
+        usar dois botões agrupados com icones ao invés de um menu suspenso para editar e apagar
+    </note>
+    <note priority="medium" time="1543056035">
+        sistema de autenticação básica
+    </note>
+    <note priority="medium" time="1543234400">
+        criar super usuário
+    </note>
 </todo>
