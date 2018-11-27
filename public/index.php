@@ -18,7 +18,10 @@ switch($controller){
     controller("home");
     break;
     case 'mensagem':
-    controller("mensagem");
+    controller($controller);
+    break;
+    case 'signin':
+    controller($controller);
     break;
     default:
     view('404');

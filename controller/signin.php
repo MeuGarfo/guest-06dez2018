@@ -1,0 +1,11 @@
+<?php
+$method=getMethod();
+if($method=='POST'){
+    controller('signin-post');
+}else{
+    $data=[
+        'title'=>"Entrar"
+    ];
+    view('signin',$data);
+}
+?>
