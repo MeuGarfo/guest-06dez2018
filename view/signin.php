@@ -10,6 +10,16 @@
     <div class="container">
         <div class="offset4 span3">
             <h1><?php print $title; ?></h1>
+            <?php
+            if(isset($error)){
+                ?>
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Dados incorretos</strong>
+                </div>
+                <?php
+            }
+            ?>
             <form class="form-vertical" action="/signin" method="post">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" class="input-block-level">

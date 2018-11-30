@@ -1,4 +1,12 @@
 <?php
-print '<pre>';
-var_dump($_POST);
- ?>
+helper("auth");
+$user=signin();
+if(isset($user['error'])){
+    $data=[
+        'error'=>$user['error'],
+        'title'=>'Entrar'
+    ];
+    view('signin',$data);
+}else{
+    redirect('/');
+}

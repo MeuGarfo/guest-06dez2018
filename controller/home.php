@@ -1,4 +1,5 @@
 <?php
+helper('auth');
 $db=db();
 $where=[
     'id[>]'=>0,
@@ -10,5 +11,5 @@ $mensagens=$db->select('mensagens','*',$where);
 $data=[
     'mensagens'=>$mensagens
 ];
-view("home",$data);
+view("homeOffline",$data);
 ?>
