@@ -8,5 +8,9 @@ if(isset($user['error'])){
     ];
     view('signin',$data);
 }else{
-    redirect('/');
+    if($user['type']=='admin'){
+        redirect('/user');
+    }else{
+        redirect('/');
+    }
 }

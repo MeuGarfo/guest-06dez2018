@@ -23,6 +23,9 @@ switch($controller){
     case 'signin':
     controller($controller);
     break;
+    case 'user':
+    controller('user');
+    break;
     default:
     view('404');
     break;
