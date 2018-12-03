@@ -10,17 +10,11 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <div class="text-center">
-                    <a class="btn btn-large btn-success" href="javascript:criarMensagem();">
-                        <i class="icon-white  icon-pencil"></i>
-                        Escrever mensagem
-                    </a><hr>
-                </div>
+                <h1>Mensagens</h1><hr>
                 <?php
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
                         $id=$mensagem['id'];
-                        view('menu/mensagem',['id'=>$id]);
                         print '<b>'.$mensagem['name'].'</b>';
                         print '<p>'.$mensagem['msg'].'</p>';
                         $data=date('r',$mensagem['created_at']);

@@ -9,7 +9,7 @@
             <a class="brand" href="/"><?php print $_ENV['SITE_NAME']; ?></a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li><a href="/">Mensagens</a></li>
+                    <li><a href="/signup">Criar conta</a></li>
                 </ul>
                 <form class="navbar-form pull-right" action="/signin" method="post">
                     <input class="span2" type="text" placeholder="Email" name="email">
