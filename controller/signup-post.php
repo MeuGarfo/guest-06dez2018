@@ -1,0 +1,23 @@
+<?php
+helper("auth");
+$data=[
+    'name'=>$_POST['name'],
+    'email'=>$_POST['email'],
+    'password'=>$_POST['password'],
+    'type'=>'user'
+];
+$user=signup($data);
+if(isset($user['error'])){
+    $data=[
+        'error'=>$user['error'],
+        'title'=>'Entrar'
+    ];
+    view('signup',$data);
+}else{
+    $user=signin();
+    if($user['type']=='admin'){
+        redirect('/user');
+    }else{
+        redirect('/');
+    }
+}

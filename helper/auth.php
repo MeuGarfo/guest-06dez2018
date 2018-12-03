@@ -21,3 +21,12 @@ function signin(){
     $Auth=getAuthInstance();
     return $Auth->signin();
 }
+
+function signup($user=false){
+    $Auth=getAuthInstance();
+    if($user){
+        return $Auth->signup($user);
+    }else{
+        return $Auth->signup();
+    }
+}

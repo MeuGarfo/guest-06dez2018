@@ -13,20 +13,12 @@ date_default_timezone_set('America/Sao_Paulo');
 //regras
 $segment=segment();
 $controller=$segment[1];
-switch($controller){
-    case '/':
-    controller("home");
-    break;
-    case 'mensagem':
+if($controller=='/'){
+    $controller='home';
+}
+$filename=ROOT.'controller/'.$controller.'.php';
+if(file_exists($filename) && !strpos($controller, '-')){
     controller($controller);
-    break;
-    case 'signin':
-    controller($controller);
-    break;
-    case 'user':
-    controller('user');
-    break;
-    default:
+}else{
     view('404');
-    break;
 }
