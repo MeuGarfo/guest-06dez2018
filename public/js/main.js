@@ -9,6 +9,13 @@ $(".nav li a").each(function(index) {
 function abrirMensagem(id){
     var url='/mensagem/'+id;
     abrirModal(url);
+    // oldUrl=document.location.pathname;
+    History.pushState(null, 'Mensagem', url);
+    $modal.on('shown', function () {
+        $('#fecharMensagem').click(function(){
+            History.back();
+        });
+    });
 }
 
 function abrirModal(url){

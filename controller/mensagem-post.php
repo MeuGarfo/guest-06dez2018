@@ -1,4 +1,5 @@
 <?php
+helper('auth');
 $db=db();
 $name=@$_POST['name'];
 $msg=@$_POST['msg'];
@@ -6,39 +7,41 @@ $where=[
     'id'=>segment(2)
 ];
 $crud=segment(3);
-if($crud=='apagar'){
-    $db->delete("mensagens",$where);
-    $url='/';
-    redirect($url);
-}elseif(strlen($name)<1){
-    $data=[
-        'title'=>'Erro',
-        'msg'=>'Digite o seu nome'
-    ];
-    view('erro',$data);
-}elseif(strlen($msg)<1){
-    $data=[
-        'title'=>'Erro',
-        'msg'=>'Digite uma mensagem'
-    ];
-    view('erro',$data);
-}else{
-    if($crud=='editar'){
+if(isAuth()){
+    if($crud=='apagar'){
+        $db->delete("mensagens",$where);
+        $url='/';
+        redirect($url);
+    }elseif(strlen($name)<1){
         $data=[
-            'name'=>$name,
-            'msg'=>$msg,
-            'updated_at'=>time()
+            'title'=>'Erro',
+            'msg'=>'Digite o seu nome'
         ];
-        $db->update("mensagens",$data,$where);
+        view('erro',$data);
+    }elseif(strlen($msg)<1){
+        $data=[
+            'title'=>'Erro',
+            'msg'=>'Digite uma mensagem'
+        ];
+        view('erro',$data);
     }else{
-        $data=[
-            'name'=>$name,
-            'msg'=>$msg,
-            'created_at'=>time()
-        ];
-        $db->insert("mensagens",$data);
+        if($crud=='editar'){
+            $data=[
+                'name'=>$name,
+                'msg'=>$msg,
+                'updated_at'=>time()
+            ];
+            $db->update("mensagens",$data,$where);
+        }else{
+            $data=[
+                'name'=>$name,
+                'msg'=>$msg,
+                'created_at'=>time()
+            ];
+            $db->insert("mensagens",$data);
+        }
+        redirect('/');
     }
-    $url='/';
-    redirect($url);
+}else{
+    redirect('/signin');
 }
-?>

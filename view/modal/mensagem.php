@@ -14,7 +14,7 @@
         ?>
     </div>
     <div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn">
+        <button id="fecharMensagem" type="button" data-dismiss="modal" class="btn">
             <i class="icon-remove"></i>
             Fechar
         </button>
