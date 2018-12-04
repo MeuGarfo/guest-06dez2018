@@ -8,7 +8,10 @@ $data=[
 ];
 $user=signup($data);
 if(isset($user['error'])){
-    redirect('/signup?error');
+    $data=[
+        'error'=>$user['error']
+    ];
+    view('signin',$data);
 }else{
     $user=signin();
     if($user['type']=='admin'){

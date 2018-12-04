@@ -31,22 +31,16 @@ $title='Criar conta';
             </form>
             <script type="text/javascript">
             $(function() {
-
                 var validator = $( "#frmSignup" ).validate();
-
+                $( "#name" ).focus();
                 <?php
-                if(isset($_GET['error'])){
+                if(isset($error)){
                     ?>
-                    validator.showErrors({
-                        "name":"Digite um nome com no mínimo 3 caracteres",
-                        "email":"Digite um email válido",
-                        "password":"Digite uma senha como no mínimo 8 caracteres"
-                    });
+                    validator.form();
                     <?php
                 }
                 ?>
             });
-
             </script>
         </div>
     </div> <!--container-->
