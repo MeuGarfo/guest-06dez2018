@@ -1,3 +1,12 @@
+label{
+    font-weight: bold;
+}
+.error{
+    color:red;
+    font-style: italic;
+    font-weight:normal;
+}
+
 /* Large desktop */
 @media (min-width: 1200px) {
     body {
