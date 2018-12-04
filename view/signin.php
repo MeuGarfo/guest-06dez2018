@@ -10,23 +10,26 @@
     <div class="container">
         <div class="offset4 span3">
             <h1><?php print $title; ?></h1>
-            <?php
-            if(isset($error)){
-                ?>
-                <div class="alert alert-error">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Dados incorretos</strong>
-                </div>
-                <?php
-            }
-            ?>
-            <form class="form-vertical" action="/signin" method="post">
+            <form id="frmSignin" class="form-vertical" action="/signin" method="post">
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" class="input-block-level">
+                <input type="email" id="email" name="email" class="input-block-level" required>
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" class="input-block-level">
+                <input type="password" id="password" name="password" class="input-block-level" minlength="8" maxlength="32" required>
                 <button type="submit" class="btn-large btn-block btn-primary"><?php print $title; ?></button>
             </form>
+            <script type="text/javascript">
+            $(function() {
+                var validator = $( "#frmSignin" ).validate();
+                $( "#email" ).focus();
+                <?php
+                if(isset($error)){
+                    ?>
+                    validator.form();
+                    <?php
+                }
+                ?>
+            });
+            </script>
         </div>
     </div> <!--container-->
     <?php view('inc/footer'); ?>
