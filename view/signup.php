@@ -25,7 +25,7 @@ $title='Criar conta';
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" class="form-control input-block-level" minlength="8" maxlength="32" required>
+                    <input type="password" id="password" name="password" class="form-control input-block-level" minlength="8" required>
                 </div>
                 <button type="submit" id="btnSignup" class="btn-large btn-block btn-primary"><?php print $title; ?></button>
             </form>
@@ -35,9 +35,7 @@ $title='Criar conta';
                 $( "#name" ).focus();
                 <?php
                 if(isset($error)){
-                    ?>
-                    validator.form();
-                    <?php
+                    print 'validator.form();';
                 }
                 ?>
             });

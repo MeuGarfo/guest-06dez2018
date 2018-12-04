@@ -14,7 +14,7 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" class="input-block-level" required>
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" class="input-block-level" minlength="8" maxlength="32" required>
+                <input type="password" id="password" name="password" class="input-block-level" minlength="8" required>
                 <button type="submit" class="btn-large btn-block btn-primary"><?php print $title; ?></button>
             </form>
             <script type="text/javascript">
@@ -23,9 +23,7 @@
                 $( "#email" ).focus();
                 <?php
                 if(isset($error)){
-                    ?>
-                    validator.form();
-                    <?php
+                    print 'validator.form();';
                 }
                 ?>
             });
