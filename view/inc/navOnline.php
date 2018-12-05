@@ -11,6 +11,16 @@
                 <ul class="nav">
                     <li><a href="/">Mensagens</a></li>
                 </ul>
+                <ul class="pull-right nav">
+                    <li class="dropdown">
+                        <a class="hand dropdown-toggle" data-toggle="dropdown"><?php print $user['name']; ?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/logout">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
             </div><!--/.nav-collapse -->
         </div>
     </div>

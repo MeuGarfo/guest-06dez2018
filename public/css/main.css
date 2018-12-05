@@ -6,6 +6,9 @@ label{
     font-style: italic;
     font-weight:normal;
 }
+.hand{
+    cursor: pointer;
+}
 
 /* Large desktop */
 @media (min-width: 1200px) {

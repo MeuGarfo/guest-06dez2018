@@ -8,8 +8,14 @@ $where=[
     ]
 ];
 $mensagens=$db->select('mensagens','*',$where);
+$user=isAuth();
 $data=[
-    'mensagens'=>$mensagens
+    'mensagens'=>$mensagens,
+    'user'=>$user
 ];
-view("homeOffline",$data);
+if($user){
+    view("homeOnline",$data);
+}else{
+    view("homeOffline",$data);
+}
 ?>

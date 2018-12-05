@@ -6,7 +6,7 @@
     <?php view('inc/header'); ?>
 </head>
 <body>
-    <?php view('inc/navOffline',$data); ?>
+    <?php view('inc/navOnline',$data); ?>
     <div class="container">
         <div class="row">
             <div class="span12">

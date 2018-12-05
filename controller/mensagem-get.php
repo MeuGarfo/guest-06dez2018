@@ -1,4 +1,5 @@
 <?php
+helper('auth');
 $id=segment(2);
 $crud=segment(3);
 $db=db();
@@ -6,8 +7,10 @@ $where=[
     'id'=>$id
 ];
 $mensagem=$db->get("mensagens",'*',$where);
+$user=isAuth();
 $data=[
-    'mensagem'=>$mensagem
+    'mensagem'=>$mensagem,
+    'user'=>$user
 ];
 if(is_numeric($id) && isAjax()){
     if($crud=='editar'){
@@ -22,13 +25,13 @@ if(is_numeric($id) && isAjax()){
 }elseif (isAjax() && !is_numeric($id)) {
     switch ($id) {
         case 'criar':
-        view('modal/criarMensagem');
+        view('modal/criarMensagem',$data);
         break;
         default:
-        view('404');
+        view('404',$data);
         break;
     }
 }else{
-    view('404');
+    view('404',$data);
 }
 ?>

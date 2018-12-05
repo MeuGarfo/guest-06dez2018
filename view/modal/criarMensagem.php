@@ -1,3 +1,10 @@
+<script type="text/javascript">
+<?php
+if(!$user){
+    print 'document.location="/signin";';
+}
+?>
+</script>
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     <h3>Escreva sua mensagem</h3>

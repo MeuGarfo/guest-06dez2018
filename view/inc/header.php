@@ -11,6 +11,3 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/logo.png">
 <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
 <link rel="shortcut icon" href="/img/logo.png">
-<!-- scripts -->
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
