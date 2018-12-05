@@ -3,10 +3,19 @@ helper('auth');
 $db=db();
 $msg=@$_POST['msg'];
 $user=isAuth();
-$where=[
-    'id'=>segment(2),
-    'user_id'=>$user['id']
-];
+if($user && $user['type']=='user'){
+    $where=[
+        'id'=>segment(2),
+        'user_id'=>$user['id']
+    ];
+}elseif($user && $user['type']=='admin'){
+    $where=[
+        'id'=>segment(2)
+    ];
+}
+if($crud=='criar'){
+    $where['user_id']=$user['id'];
+}
 $crud=segment(3);
 if($user){
     if($crud=='apagar'){
