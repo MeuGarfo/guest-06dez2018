@@ -7,6 +7,12 @@ $where=[
     'id'=>$id
 ];
 $mensagem=$db->get("mensagens",'*',$where);
+if($mensagem){
+    $where=[
+        'id'=>$mensagem['user_id'],
+    ];
+    $mensagem['name']=$db->get('users','*',$where)['name'];
+}
 $user=isAuth();
 $data=[
     'mensagem'=>$mensagem,

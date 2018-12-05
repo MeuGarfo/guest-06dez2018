@@ -7,7 +7,12 @@ $where=[
         'created_at'=>'DESC'
     ]
 ];
-$mensagens=$db->select('mensagens','*',$where);
+$mensagensArr=$db->select('mensagens','*',$where);
+$mensagens=null;
+foreach ($mensagensArr as $key => $mensagem) {
+    $mensagens[$key]=$mensagem;
+    $mensagens[$key]['name']=getUserById($mensagem['user_id'])['name'];
+}
 $user=isAuth();
 $data=[
     'mensagens'=>$mensagens,

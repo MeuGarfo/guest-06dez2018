@@ -1,23 +1,19 @@
 <?php
 helper('auth');
 $db=db();
-$name=@$_POST['name'];
 $msg=@$_POST['msg'];
+$user=isAuth();
 $where=[
-    'id'=>segment(2)
+    'id'=>segment(2),
+    'user_id'=>$user['id']
 ];
 $crud=segment(3);
-if(isAuth()){
+if($user){
     if($crud=='apagar'){
+        //apagar mensagem
         $db->delete("mensagens",$where);
         $url='/';
         redirect($url);
-    }elseif(strlen($name)<1){
-        $data=[
-            'title'=>'Erro',
-            'msg'=>'Digite o seu nome'
-        ];
-        view('erro',$data);
     }elseif(strlen($msg)<1){
         $data=[
             'title'=>'Erro',
@@ -26,17 +22,18 @@ if(isAuth()){
         view('erro',$data);
     }else{
         if($crud=='editar'){
+            //editar mensagem
             $data=[
-                'name'=>$name,
                 'msg'=>$msg,
                 'updated_at'=>time()
             ];
             $db->update("mensagens",$data,$where);
         }else{
+            //criar mensagem
             $data=[
-                'name'=>$name,
                 'msg'=>$msg,
-                'created_at'=>time()
+                'created_at'=>time(),
+                'user_id'=>$user['id']
             ];
             $db->insert("mensagens",$data);
         }

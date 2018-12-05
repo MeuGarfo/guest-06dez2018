@@ -5,12 +5,6 @@
 <div class="modal-body">
     <form class="form-vertcal" action="/mensagem/<?php print $mensagem['id']; ?>/editar" method="post" id="mensagem">
         <div class="control-group">
-            <label for="name">Nome</label>
-            <div class="controls">
-                <input class="input-block-level" type="text" name="name" value="<?php print $mensagem['name']; ?>" id="name">
-            </div>
-        </div>
-        <div class="control-group">
             <label for="msg">Mensagem</label>
             <div class="controls">
                 <textarea class="input-block-level" name="msg" rows="8" cols="80" id="msg"><?php print $mensagem['msg']; ?></textarea>

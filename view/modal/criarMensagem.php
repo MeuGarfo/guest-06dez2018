@@ -12,12 +12,6 @@ if(!$user){
 <div class="modal-body">
     <form class="form-vertcal" action="/mensagem" method="post" id="mensagem">
         <div class="control-group">
-            <label for="name">Nome</label>
-            <div class="controls">
-                <input class="input-block-level" type="text" name="name" value="Anderson Ismael" id="name">
-            </div>
-        </div>
-        <div class="control-group">
             <label for="msg">Mensagem</label>
             <div class="controls">
                 <textarea tabindex="1" class="input-block-level" name="msg" rows="8" cols="80" id="msg"></textarea>

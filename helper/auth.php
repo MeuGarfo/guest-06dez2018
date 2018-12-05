@@ -7,6 +7,14 @@ function getAuthInstance(){
     return new Basic\Auth($db);
 }
 
+function getUserById($id){
+    $db=db();
+    $where=[
+        'id'=>$id
+    ];
+    return $db->get("users","*",$where);
+}
+
 function isAuth(){
     $Auth=getAuthInstance();
     return $Auth->isAuth();

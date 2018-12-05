@@ -3,7 +3,7 @@
     <note priority="medium" time="1543858409">
         o modal de criação de mensagem deve ser apenas um modal comum e não um modal com iframe
     </note>
-    <note priority="medium" time="1543861250">
+    <note priority="medium" time="1543861250" done="1544032871">
         validar os formularios com smoke
     </note>
 </todo>
