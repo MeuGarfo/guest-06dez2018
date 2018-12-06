@@ -3,13 +3,13 @@
     <note priority="medium" time="1543861250" done="1544032871">
         validar os formularios com smoke
     </note>
-    <note priority="medium" time="1543858409">
-        o modal de criação de mensagem deve ser apenas um modal comum e não um modal com iframe
-    </note>
     <note priority="medium" time="1544034638" done="1544101656">
         limitar o tamanho do email, da mensagem e do nome de usuário no front e no back
     </note>
-    <note priority="medium" time="1544101023">
+    <note priority="medium" time="1543858409">
+        o modal de criação de mensagem deve ser apenas um modal comum e não um modal com iframe
+    </note>
+    <note priority="medium" time="1544101023" done="1544101787">
         função e no inc/view para imprimir e escapar strings
     </note>
 </todo>
