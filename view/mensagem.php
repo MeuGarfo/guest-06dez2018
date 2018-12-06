@@ -2,7 +2,7 @@
 <html lang="pt" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title><?php print $mensagem['name']; ?></title>
+    <title><?php e($mensagem['name']); ?></title>
     <?php view('inc/header'); ?>
 </head>
 <body>
@@ -11,9 +11,13 @@
         <div class="span12">
             <?php
             $id=$mensagem['id'];
-            print '<b>'.$mensagem['name'].'</b><hr>';
+            print '<b>';
+            e($mensagem['name']);
+            print '</b><hr>';
             view('menu/mensagem',['id'=>$id]);
-            print '<h1>'.$mensagem['msg'].'</h1>';
+            print '<h1>';
+            e($mensagem['msg']);
+            print '</h1>';
             $data=date('r',$mensagem['created_at']);
             print '<small>'.$data.'</small>';
             ?>

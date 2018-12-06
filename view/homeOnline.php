@@ -29,8 +29,12 @@
                     if($user['id']==$mensagem['user_id']){
                         view('menu/mensagem',['id'=>$id]);
                     }
-                    print '<b>'.$mensagem['name'].'</b>';
-                    print '<p>'.$mensagem['msg'].'</p>';
+                    print '<b>';
+                    e($mensagem['name']);
+                    print '</b>';
+                    print '<p>';
+                    e($mensagem['msg']);
+                    print '</p>';
                     $data=date('r',$mensagem['created_at']);
                     $link='<a onclick="abrirMensagem('.$id.'); return false;" href="/mensagem/'.$id.'">'.$data.'</a>';
                     print '<p>';

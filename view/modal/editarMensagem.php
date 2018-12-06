@@ -3,11 +3,11 @@
     <h3>Editar mensagem</h3>
 </div>
 <div class="modal-body">
-    <form class="form-vertcal" action="/mensagem/<?php print $mensagem['id']; ?>/editar" method="post" id="mensagem">
+    <form class="form-vertcal" action="/mensagem/<?php print $mensagem['id']; ?>/editar" method="post" id="frmMensagem">
         <div class="control-group">
             <label for="msg">Mensagem</label>
             <div class="controls">
-                <textarea class="input-block-level" name="msg" rows="8" cols="80" id="msg"><?php print $mensagem['msg']; ?></textarea>
+                <textarea class="input-block-level" name="msg" rows="8" cols="80" id="msg"><?php e($mensagem['msg']); ?></textarea>
             </div>
         </div>
     </form>
@@ -21,7 +21,7 @@
     </script>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-success" type="submit" name="button" onclick="$('#mensagem').submit();">
+    <button class="btn btn-success" type="submit" name="button" onclick="$('#frmMensagem').submit();">
         <i class="icon-white icon-ok"></i>
         Salvar
     </button>
