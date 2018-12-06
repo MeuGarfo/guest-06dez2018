@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <button type="button" class="close fecharMensagem" data-dismiss="modal" aria-hidden="true">&times;</button>
     <h3><?php print $mensagem['name']; ?></h3>
 </div>
 <div class="modal-body">
@@ -14,7 +14,7 @@
         ?>
     </div>
     <div class="modal-footer">
-        <button id="fecharMensagem" type="button" data-dismiss="modal" class="btn">
+        <button id="fecharMensagem" type="button" data-dismiss="modal" class="btn fecharMensagem">
             <i class="icon-remove"></i>
             Fechar
         </button>
