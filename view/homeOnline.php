@@ -25,10 +25,7 @@
             <?php
             if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                 foreach ($mensagens as $mensagem) {
-                    $id=$mensagem['id'];
-                    if($user['id']==$mensagem['user_id']){
-                        view('menu/mensagem',['id'=>$id]);
-                    }
+                    view('menu/mensagem',['user'=>$user,'mensagem'=>$mensagem]);
                     print '<b>';
                     e($mensagem['name']);
                     print '</b>';
@@ -36,7 +33,7 @@
                     e($mensagem['msg']);
                     print '</p>';
                     $data=date('r',$mensagem['created_at']);
-                    $link='<a onclick="abrirMensagem('.$id.'); return false;" href="/mensagem/'.$id.'">'.$data.'</a>';
+                    $link='<a onclick="abrirMensagem('.$mensagem['id'].'); return false;" href="/mensagem/'.$mensagem['id'].'">'.$data.'</a>';
                     print '<p>';
                     print '<small>'.$link.'</small>';
                     print '</p><hr>';

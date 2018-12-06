@@ -10,11 +10,10 @@
     <div class="container">
         <div class="span12">
             <?php
-            $id=$mensagem['id'];
             print '<b>';
             e($mensagem['name']);
             print '</b><hr>';
-            view('menu/mensagem',['id'=>$id]);
+            view('menu/mensagem',['user'=>$user,'mensagem'=>$mensagem]);
             print '<h1>';
             e($mensagem['msg']);
             print '</h1>';
