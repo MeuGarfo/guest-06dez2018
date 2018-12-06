@@ -14,7 +14,7 @@ if(!$user){
         <div class="control-group">
             <label for="msg">Mensagem</label>
             <div class="controls">
-                <textarea tabindex="1" class="input-block-level" name="msg" rows="8" cols="80" id="msg"></textarea>
+                <textarea minlength="1" maxlength="280" tabindex="1" class="input-block-level" name="msg" rows="8" cols="80" id="msg" required></textarea>
             </div>
         </div>
     </form>
@@ -25,6 +25,7 @@ if(!$user){
             return false;
         }
     });
+    var validator = $( "#mensagem" ).validate();
     </script>
 </div>
 <div class="modal-footer">

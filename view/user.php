@@ -6,7 +6,9 @@
     <?php view('inc/header'); ?>
 </head>
 <body>
-    <?php view('inc/navOnline',$data); ?>
+    <?php
+    view('inc/navAdmin',$data);
+    ?>
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -16,8 +18,7 @@
                         print '<thead>';
                         print '<tr>';
                         print '<th>Nome</th>';
-                        print '<th>Nivel</th>';
-                        print '<th>Opções</th>';
+                        print '<th colspan="2">Nivel</th>';
                         print '</tr>';
                         print '</thead>';
                         print '<tbody>';
@@ -25,7 +26,9 @@
                             print '<tr>';
                             print '<td>'.$user['name'].'</td>';
                             print '<td>'.$user['type'].'</td>';
-                            print '<td>botões</td>';
+                            print '<td>';
+                            view('menu/user',['user'=>$user]);
+                            print '</td>';
                             print '</tr>';
                         }
                         print '</tbody>';

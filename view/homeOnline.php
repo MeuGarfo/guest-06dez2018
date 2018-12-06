@@ -6,7 +6,13 @@
     <?php view('inc/header'); ?>
 </head>
 <body>
-    <?php view('inc/navOnline',$data); ?>
+    <?php
+    if($user['type']=='admin'){
+        view('inc/navAdmin',$data);
+    }else{
+        view('inc/navOnline',$data);
+    }
+    ?>
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -20,7 +26,9 @@
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
                         $id=$mensagem['id'];
-                        view('menu/mensagem',['id'=>$id]);
+                        if($user['id']==$mensagem['user_id']){
+                            view('menu/mensagem',['id'=>$id]);
+                        }
                         print '<b>'.$mensagem['name'].'</b>';
                         print '<p>'.$mensagem['msg'].'</p>';
                         $data=date('r',$mensagem['created_at']);

@@ -17,15 +17,15 @@ $title='Criar conta';
             <form id="frmSignup" class="form-vertical" action="/signup" method="post">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" class="form-control input-block-level" minlength="3" required>
+                    <input type="text" id="name" name="name" class="form-control input-block-level" minlength="3" maxlength="32" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control input-block-level" required>
+                    <input type="email" id="email" name="email" class="form-control input-block-level" maxlength="32" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" class="form-control input-block-level" minlength="8" required>
+                    <input type="password" id="password" name="password" class="form-control input-block-level" minlength="8" maxlength="32" required>
                 </div>
                 <button type="submit" id="btnSignup" class="btn-large btn-block btn-primary"><?php print $title; ?></button>
             </form>

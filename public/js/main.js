@@ -35,6 +35,11 @@ function apagarMensagem(id){
     abrirModal(url);
 }
 
+function apagarUsuário(id){
+    var url='/user/'+id+'/apagar';
+    abrirModal(url);
+}
+
 function criarMensagem(){
     var url='/mensagem/criar';
     abrirModal(url);

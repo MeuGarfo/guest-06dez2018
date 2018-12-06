@@ -1,0 +1,39 @@
+<?php
+helper('auth');
+$user=isAuth();
+$crud=segment(3);
+if(isset($user['type']) && $user['type']=='admin'){
+    $db=db();
+    if($crud=='apagar'){
+        $where=[
+            'id'=>segment(2)
+        ];
+        $user=$db->get('users','*',$where);
+        if($user){
+            $data=[
+                'user'=>$user
+            ];
+            view('modal/apagarUsuário',$data);
+        }
+    }else{
+        $where=[
+            'id[>]'=>0,
+            'ORDER'=>[
+                'name'=>'ASC'
+            ]
+        ];
+        $data=[
+            'users'=>$db->select('users','*',$where),
+            'user'=>$user
+        ];
+        view('user',$data);
+    }
+}else{
+    $data=[
+        'title'=>'Erro 403',
+        'msg'=>'Acesso negado',
+        'user'=>$user
+    ];
+    view('erro',$data);
+}
+?>

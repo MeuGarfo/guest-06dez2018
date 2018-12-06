@@ -20,7 +20,9 @@
                 if(isset($mensagens) && is_array($mensagens) && count($mensagens) > 0){
                     foreach ($mensagens as $mensagem) {
                         $id=$mensagem['id'];
-                        view('menu/mensagem',['id'=>$id]);
+                        if($user['id']==$mensagem['user_id']){
+                            view('menu/mensagem',['id'=>$id]);
+                        }
                         print '<b>'.$mensagem['name'].'</b>';
                         print '<p>'.$mensagem['msg'].'</p>';
                         $data=date('r',$mensagem['created_at']);

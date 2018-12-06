@@ -3,6 +3,7 @@ helper('auth');
 $db=db();
 $msg=@$_POST['msg'];
 $user=isAuth();
+$crud=segment(3);
 if($user && $user['type']=='user'){
     $where=[
         'id'=>segment(2),
@@ -16,17 +17,16 @@ if($user && $user['type']=='user'){
 if($crud=='criar'){
     $where['user_id']=$user['id'];
 }
-$crud=segment(3);
 if($user){
     if($crud=='apagar'){
         //apagar mensagem
         $db->delete("mensagens",$where);
         $url='/';
         redirect($url);
-    }elseif(strlen($msg)<1){
+    }elseif(strlen($msg)<1 || strlen($msg)>280){
         $data=[
             'title'=>'Erro',
-            'msg'=>'Digite uma mensagem'
+            'msg'=>'Digite uma mensagem com no mínimo 1 e no máximo 280 caracteres'
         ];
         view('erro',$data);
     }else{

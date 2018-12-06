@@ -6,12 +6,17 @@ $data=[
     'password'=>$_POST['password'],
     'type'=>'user'
 ];
-$user=signup($data);
+if(strlen($_POST['name'])<=32 && strlen($_POST['email'])<=32){
+    $user=signup($data);
+}else{
+    $user['error']=true;
+}
 if(isset($user['error'])){
     $data=[
-        'error'=>$user['error']
+        'error'=>$user['error'],
+        'title'=>'Entrar'
     ];
-    view('signin',$data);
+    view('signup',$data);
 }else{
     $user=signin();
     if($user['type']=='admin'){
