@@ -41,9 +41,8 @@ function apagarUsuário(id){
 }
 
 function criarMensagem(){
-    var url='/mensagem/criar';
-    abrirModal(url);
-    $modal.on('shown', function () {
+    $('#criarMensagem').modal('show');
+    $('#criarMensagem').on('shown', function () {
         $('#msg').focus();
     });
 }
