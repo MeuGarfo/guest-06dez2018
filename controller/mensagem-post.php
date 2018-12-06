@@ -2,6 +2,7 @@
 helper('auth');
 $db=db();
 $msg=@$_POST['msg'];
+$msg=printable($msg);
 $user=isAuth();
 $crud=segment(3);
 if($user && $user['type']=='user'){
@@ -23,14 +24,14 @@ if($user){
         $db->delete("mensagens",$where);
         $url='/';
         redirect($url);
-    }elseif(strlen($msg)<1 || strlen($msg)>280){
-        $data=[
-            'title'=>'Erro',
-            'msg'=>'Digite uma mensagem com no mínimo 1 e no máximo 280 caracteres'
-        ];
-        view('erro',$data);
     }else{
-        if($crud=='editar'){
+        if(strlen($msg)<1 || strlen($msg)>280){
+            $data=[
+                'title'=>'Erro',
+                'msg'=>'Digite uma mensagem com no mínimo 1 e no máximo 280 caracteres'
+            ];
+            view('erro',$data);
+        }elseif($crud=='editar'){
             //editar mensagem
             $data=[
                 'msg'=>$msg,

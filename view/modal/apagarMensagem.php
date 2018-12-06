@@ -3,20 +3,20 @@
     <h3>Apagar mensagem</h3>
 </div>
 <div class="modal-body">
-    <form class="form-vertcal" action="/mensagem/<?php print $mensagem['id']; ?>/apagar" method="post" id="mensagem">
+    <form class="form-vertcal" action="/mensagem/<?php print $mensagem['id']; ?>/apagar" method="post" id="frmMensagem">
         <p>Deseja realmente apagar essa mensagem?</p>
     </form>
     <script type="text/javascript">
     $('body').keypress(function (e) {
         if (e.which == 13) {
-            $('#mensagem').submit();
+            $('#frmMensagem').submit();
             return false;
         }
     });
     </script>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-success" type="submit" name="button" onclick="$('#mensagem').submit();">
+    <button class="btn btn-success" type="submit" name="button" onclick="$('#frmMensagem').submit();">
         <i class="icon-white icon-ok"></i>
         Sim
     </button>

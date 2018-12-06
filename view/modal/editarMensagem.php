@@ -14,7 +14,7 @@
     <script type="text/javascript">
     $('#msg').keypress(function (e) {
         if (e.which == 13) {
-            $('#mensagem').submit();
+            $('#frmMensagem').submit();
             return false;
         }
     });
